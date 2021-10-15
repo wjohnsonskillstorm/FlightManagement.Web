@@ -1,0 +1,58 @@
+﻿@model FlightManagement.Data.Flight
+
+@{
+    ViewData["Title"] = "Edit Flight Info";
+}
+
+<h1>Edit</h1>
+
+<h4>Flight</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FlightNumber" class="control-label"></label>
+                <input asp-for="FlightNumber" class="form-control" />
+                <span asp-validation-for="FlightNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureDateTime" class="control-label"></label>
+                <input asp-for="DepartureDateTime" class="form-control" />
+                <span asp-validation-for="DepartureDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrivalDateTime" class="control-label"></label>
+                <input asp-for="ArrivalDateTime" class="form-control" />
+                <span asp-validation-for="ArrivalDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureAirport" class="control-label"></label>
+                <input asp-for="DepartureAirport" class="form-control" />
+                <span asp-validation-for="DepartureAirport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArrivalAirport" class="control-label"></label>
+                <input asp-for="ArrivalAirport" class="form-control" />
+                <span asp-validation-for="ArrivalAirport" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PassengerLimit" class="control-label"></label>
+                <input asp-for="PassengerLimit" class="form-control" />
+                <span asp-validation-for="PassengerLimit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Cancel</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

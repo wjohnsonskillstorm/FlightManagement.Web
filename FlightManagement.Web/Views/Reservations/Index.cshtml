@@ -1,0 +1,62 @@
+﻿@model FlightManagement.Data.ReservationsHolder
+
+@{
+    ViewData["Title"] = "Reservations";
+}
+
+<h1>Reservations</h1>
+
+<div class="container">
+    <h4>Flight</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Flight Number
+        </dt>
+        <dd class="col-sm-10">
+            @Model.flight.FlightNumber
+        </dd>
+    </dl>
+    <h4>Passengers Reserved for Flight</h4>
+    <div style="padding-bottom:10px;">
+        <a href="@Url.Action("Create", "Reservations", new { id = Model.flight.Id })">
+            <button style="border-color: #839496; border-width: thin;" class="btn">Add Reservation</button>
+        </a>
+    </div>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Reservation Number</td>
+                <td>First Name</td>
+                <td>Middle Name</td>
+                <td>Last Name</td>
+                <td>Birthday</td>
+                <td>Email</td>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.reservations)
+            {
+                var birthdayformatted = reservation.passenger.Birthday.ToShortDateString();
+            <tr>
+                <td>@reservation.Id</td>
+                <td>@reservation.passenger.FirstName</td>
+                <td>@reservation.passenger.MiddleName</td>
+                <td>@reservation.passenger.LastName</td>
+                <td>@birthdayformatted</td>
+                <td>@reservation.passenger.Email</td>
+                <td>@Html.ActionLink("Delete Reservation", "Delete", "Reservations", new { @reservation.Id }, null)</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div>
+        <a asp-action="Index" asp-controller="Flight">Back to Flight List</a>
+    </div>
+</div>
+
+
+

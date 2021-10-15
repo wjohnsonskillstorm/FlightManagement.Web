@@ -1,0 +1,12 @@
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\bin\Debug\net5.0\FlightManagement.Data.deps.json
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\bin\Debug\net5.0\FlightManagement.Data.dll
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\bin\Debug\net5.0\ref\FlightManagement.Data.dll
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\bin\Debug\net5.0\FlightManagement.Data.pdb
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.csproj.AssemblyReference.cache
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.AssemblyInfoInputs.cache
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.AssemblyInfo.cs
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.csproj.CoreCompileInputs.cache
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.dll
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\ref\FlightManagement.Data.dll
+C:\Users\Wyatt\source\repos\FlightManagement.Web\FlightManagement.Data\obj\Debug\net5.0\FlightManagement.Data.pdb

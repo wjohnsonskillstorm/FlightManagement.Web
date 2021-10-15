@@ -1,0 +1,60 @@
+﻿@model FlightManagement.Data.ReservationsHolder
+
+@{
+    ViewData["Title"] = "Make a Reservation";
+}
+
+<h1>Create a new Reservation</h1>
+
+<h4>Passengers Available</h4>
+<hr />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>First Name</td>
+            <td>Middle Name</td>
+            <td>Last Name</td>
+            <td>Birthday</td>
+            <td>Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var passenger in Model.passengers)
+        {
+            var birthdayformatted = passenger.Birthday.ToShortDateString();
+            <tr>
+                <td>@passenger.Id</td>
+                <td>@passenger.FirstName</td>
+                <td>@passenger.MiddleName</td>
+                <td>@passenger.LastName</td>
+                <td>@birthdayformatted</td>                
+                <td>@passenger.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="col-md-5" align="left">
+    @using (Html.BeginForm("Create", "Reservations", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label asp-for="SelectedPassenger" class="control-label">Please Enter a Passenger ID:</label>
+            <input asp-for="SelectedPassenger" class="form-control" value="" />
+            <span asp-validation-for="SelectedPassenger" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    }
+</div>
+
+@if (ViewBag.IsError) { 
+    <span class="text-danger">Error, Try Again!</span>
+}
+<div>
+    @Html.ActionLink("Cancel", "Index", "Reservations", new {Model.flight.Id}, null)
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

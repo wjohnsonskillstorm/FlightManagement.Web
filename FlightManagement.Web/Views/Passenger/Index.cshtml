@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<FlightManagement.Data.Passenger>
+@{
+    ViewData["Title"] = "Passengers";
+}
+
+
+<div class="text-center">
+    <h2>View All Passengers</h2>
+    <div style="padding-bottom:10px;">
+        <a class="navbar-brand" asp-area="" asp-controller="Passenger" asp-action="Create"><button style="border-color: #839496; border-width: thin; " class="btn">Add Passenger</button></a>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>First Name</td>
+                <td>Middle Name</td>
+                <td>Last Name</td>
+                <td>@Html.DisplayNameFor(model => model.Birthday)</td>
+                <td>@Html.DisplayNameFor(model => model.Email)</td>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var passenger in Model)
+            {
+                var BirthdayFormatted = passenger.Birthday.ToShortDateString();
+                <tr>
+                    <td>@Html.DisplayFor(modelitem => passenger.Id)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.FirstName)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.MiddleName)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.LastName)</td>
+                    <td>@Html.DisplayFor(modelitem => BirthdayFormatted)</td>
+                    <td>@Html.DisplayFor(modelitem => passenger.Email)</td>
+                    <td>@Html.ActionLink("Edit Information", "Edit", "Passenger", new { id = passenger.Id }, null)</td>
+                    <td>@Html.ActionLink("Delete", "Delete", "Passenger", new { id = passenger.Id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
